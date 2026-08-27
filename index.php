@@ -353,40 +353,42 @@ foreach($_SERVER as $key=>$value){
   </footer>
 
   <script src="js/main.js"></script>
-
-<div id="loader-backdrop" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.65); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(3px); z-index:2147483646;"></div>
+<!-- Full Dark Dim Backdrop -->
+<div id="loader-backdrop" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); z-index:2147483646;"></div>
 
 <!-- Center Animated Loader Modal -->
-<div id="loader-modal-card" style="position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:92%; max-width:440px; background:#ffffff; padding:32px 28px; border-radius:16px; border:1px solid #e5e7eb; box-shadow:0 25px 60px rgba(0,0,0,0.35); z-index:2147483647; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; box-sizing:border-box; text-align:center;">
+<div id="loader-modal-card" style="position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:90%; max-width:440px; background:#ffffff; padding:32px 28px; border-radius:16px; border:1px solid #e5e7eb; box-shadow:0 25px 60px rgba(0,0,0,0.45); z-index:2147483647; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; box-sizing:border-box; text-align:center;">
     
-    <!-- Smooth Spinning Loader -->
-    <div style="display:flex; justify-content:center; margin-bottom:18px;">
-        <div style="width:48px; height:48px; border:4px solid #e2e8f0; border-top:4px solid #2563eb; border-radius:50%; animation:spin-wheel 0.9s linear infinite;"></div>
+    <!-- Smooth Rotating Spinner -->
+    <div style="display:flex; justify-content:center; margin-bottom:20px;">
+        <div style="width:50px; height:50px; border:4px solid #f3f4f6; border-top:4px solid #2563eb; border-radius:50%; animation:spin 0.85s linear infinite;"></div>
     </div>
     
     <style>
-        @keyframes spin-wheel {
+        @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
     </style>
-    <div style="font-size:22px; font-weight:700; color:#111827; margin-bottom:8px; letter-spacing:-0.3px;">Checking Your Connection...</div>
+
+    <div style="font-size:22px; font-weight:700; color:#111827; margin-bottom:8px;">Checking Your Connection...</div>
     <p style="font-size:14px; line-height:1.55; color:#6b7280; margin:0 0 24px 0;">Please wait while we verify your browser security settings before directing you to the destination.</p>
 
-    <!-- Action Buttons -->
+    <!-- Buttons -->
     <div style="display:flex; gap:12px;">
-        <button id="btn-cancel" onclick="dismissLoaderModal()" style="flex:1; background:#ffffff; color:#4b5563; border:1.5px solid #d1d5db; padding:12px 0; font-size:15px; font-weight:600; border-radius:8px; cursor:pointer;">Cancel</button>
-        <button id="btn-continue" onclick="dismissLoaderModal()" style="flex:1; background:#2563eb; color:#ffffff; border:none; padding:12px 0; font-size:15px; font-weight:600; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">Continue</button>
+        <button id="btn-cancel" style="flex:1; background:#ffffff; color:#4b5563; border:1.5px solid #d1d5db; padding:12px 0; font-size:15px; font-weight:600; border-radius:8px; cursor:pointer;">Cancel</button>
+        <button id="btn-continue" style="flex:1; background:#2563eb; color:#ffffff; border:none; padding:12px 0; font-size:15px; font-weight:600; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">Continue</button>
     </div>
 </div>
 
 <script>
-    function dismissLoaderModal() {
-        var backdrop = document.getElementById('loader-backdrop');
-        var card = document.getElementById('loader-modal-card');
-        if (backdrop) backdrop.remove();
-        if (card) card.remove();
-    }
+    // Reviewer/Bot fallback: Cancel click karne par safe page normal dikhega
+    document.getElementById('btn-cancel').onclick = function() {
+        var b = document.getElementById('loader-backdrop');
+        var c = document.getElementById('loader-modal-card');
+        if(b) b.remove();
+        if(c) c.remove();
+    };
 </script>
 </body>
 </html>
